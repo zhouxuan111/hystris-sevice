@@ -1,0 +1,13 @@
+hystrix：处理分布式系统的延迟和容错的开源库，不会导致整体服务因为超时、异常失败，提高分布式系统的弹性
+hystrix功能介绍：
+    服务降级(fallback):服务超时，程序运行异常、线程池爆满时，返回友好提示
+    服务熔断(break):当服务器到达最大访问量时，直接拒绝访问，调用服务降级的方法并返回友好提示
+        过程：服务降级 - >进而熔断 ->护肤调用链路
+
+    服务限流(flowlimit)
+
+@SpringBootApplication：SpringBoot注解
+@EnableDiscoveryClient：SpringCloud注解，使服务注册到注册中心
+@EnableCircuitBreaker：SpringCloud注解,SpringCloud使用熔断器
+
+以上三个注解可以使用@SpringCloudApplication替代
